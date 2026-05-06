@@ -1,0 +1,534 @@
+{
+  "sections": {
+    "varino_hero": {
+      "type": "custom-liquid",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "custom_liquid": "<style>\n  .varino-hero{position:relative;width:100vw;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;height:88vh;min-height:600px;max-height:900px;display:flex;align-items:center;justify-content:center;color:#F5EFE6;overflow:hidden;background:#1B3A2F;}\n  .varino-hero__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}\n  .varino-hero__overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,30,24,.55) 0%,rgba(15,30,24,.35) 45%,rgba(15,30,24,.7) 100%);} \n  .varino-hero__inner{position:relative;text-align:center;padding:0 24px;max-width:920px;}\n  .varino-hero__eyebrow{font-family:'Lora',serif;letter-spacing:.45em;font-size:12px;text-transform:uppercase;color:#D6BC8A;margin-bottom:28px;display:inline-block;}\n  .varino-hero__eyebrow:before,.varino-hero__eyebrow:after{content:'';display:inline-block;width:32px;height:1px;background:#D6BC8A;vertical-align:middle;margin:0 14px;}\n  .varino-hero__title{font-family:'Playfair Display','Cormorant Garamond',serif;font-weight:600;font-size:clamp(44px,7vw,96px);line-height:1.05;letter-spacing:-.01em;margin:0 0 22px;}\n  .varino-hero__title em{font-style:italic;font-weight:500;color:#D6BC8A;}\n  .varino-hero__sub{font-family:'Lora',serif;font-size:clamp(15px,1.4vw,18px);line-height:1.7;max-width:620px;margin:0 auto 38px;opacity:.92;}\n  .varino-hero__cta{display:inline-flex;align-items:center;justify-content:center;gap:14px;padding:18px 42px;background:#F5EFE6;color:#1B3A2F;text-decoration:none;font-family:'Lora',serif;font-size:13px;letter-spacing:.32em;text-transform:uppercase;font-weight:600;transition:transform .25s ease,background .25s ease;}\n  .varino-hero__cta:hover{background:#A37D5A;color:#F5EFE6;}\n  .varino-hero__cta--ghost{background:transparent;color:#F5EFE6;border:1px solid rgba(245,239,230,.55);margin-left:14px;}\n  .varino-hero__cta--ghost:hover{background:#F5EFE6;color:#1B3A2F;}\n  .varino-hero__scroll{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);font-family:'Lora',serif;font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:#F5EFE6;opacity:.7;}\n  @media (max-width:749px){.varino-hero{height:80vh;min-height:520px;}.varino-hero__cta--ghost{margin-left:0;margin-top:14px;}}\n</style>\n<section class=\"varino-hero\">\n  <img class=\"varino-hero__bg\" src=\"{{ 'varino-lifestyle-kitchen.png' | asset_url }}\" alt=\"Varino Spülmaschinen Blätter\" loading=\"eager\">\n  <div class=\"varino-hero__overlay\"></div>\n  <div class=\"varino-hero__inner\">\n    <span class=\"varino-hero__eyebrow\">Premium aus Deutschland</span>\n    <h1 class=\"varino-hero__title\">Reine Sauberkeit.<br><em>Reine Eleganz.</em></h1>\n    <p class=\"varino-hero__sub\">Spülmaschinen Blätter, neu gedacht. Hochkonzentriert, kompostierbar, plastikfrei. Ein Streifen für strahlenden Glanz – halbierbar für bis zu 60 Waschgänge pro Pack.</p>\n    <div>\n      <a href=\"/products/varino-spuelmaschinen-blaetter\" class=\"varino-hero__cta\">Jetzt bestellen<span style=\"display:inline-block;transition:transform .25s\">→</span></a>\n      <a href=\"#story\" class=\"varino-hero__cta varino-hero__cta--ghost\">Geschichte entdecken</a>\n    </div>\n  </div>\n  <span class=\"varino-hero__scroll\">↓ Scrollen</span>\n</section>",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "varino_marquee": {
+      "type": "custom-liquid",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "custom_liquid": "<style>\n  .varino-marquee{width:100vw;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;position:relative;background:#F5EFE6;border-top:1px solid rgba(27,58,47,.12);border-bottom:1px solid rgba(27,58,47,.12);overflow:hidden;padding:30px 0;}\n  .varino-marquee__track{display:flex;gap:80px;align-items:center;animation:varino-scroll 38s linear infinite;width:max-content;}\n  .varino-marquee__item{font-family:'Playfair Display',serif;font-style:italic;font-size:24px;color:#1B3A2F;white-space:nowrap;letter-spacing:.02em;}\n  .varino-marquee__dot{width:6px;height:6px;border-radius:50%;background:#A37D5A;display:inline-block;margin:0 32px;vertical-align:middle;}\n  @keyframes varino-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}\n</style>\n<section class=\"varino-marquee\" aria-hidden=\"true\">\n  <div class=\"varino-marquee__track\">\n    {%- assign phrases = 'Plastikfrei,Hochkonzentriert,Bis zu 60 Waschgänge,Vegan & dermatologisch getestet,Kompostierbar,Made in Germany,Glanzklar,Ohne Phosphate' | split: ',' -%}\n    {%- for i in (1..2) -%}\n      {%- for phrase in phrases -%}\n        <span class=\"varino-marquee__item\">{{ phrase }}</span>\n        <span class=\"varino-marquee__dot\"></span>\n      {%- endfor -%}\n    {%- endfor -%}\n  </div>\n</section>",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "varino_story": {
+      "type": "custom-liquid",
+      "settings": {
+        "display_id": true,
+        "visibility": "always-display",
+        "custom_liquid": "<style>\n  #shopify-section-template--*-varino_story,.varino-story{background:#F5EFE6;}\n  .varino-story{width:100vw;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;position:relative;padding:120px 24px;}\n  .varino-story__grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center;}\n  .varino-story__copy h2{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(34px,4.4vw,58px);line-height:1.1;color:#1B3A2F;margin:0 0 32px;letter-spacing:-.005em;}\n  .varino-story__copy h2 em{font-style:italic;color:#A37D5A;}\n  .varino-story__eyebrow{display:inline-block;font-family:'Lora',serif;font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:#A37D5A;margin-bottom:18px;}\n  .varino-story__copy p{font-family:'Lora',serif;font-size:17px;line-height:1.8;color:#2A3B33;margin:0 0 22px;max-width:520px;}\n  .varino-story__sig{display:flex;align-items:center;gap:18px;margin-top:38px;font-family:'Lora',serif;font-style:italic;color:#1B3A2F;font-size:15px;}\n  .varino-story__sig:before{content:'';width:42px;height:1px;background:#A37D5A;}\n  .varino-story__media{position:relative;}\n  .varino-story__media img{width:100%;display:block;}\n  .varino-story__badge{position:absolute;bottom:-32px;right:-32px;background:#1B3A2F;color:#F5EFE6;width:170px;height:170px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px;text-align:center;font-family:'Playfair Display',serif;}\n  .varino-story__badge strong{font-size:42px;line-height:1;display:block;color:#D6BC8A;}\n  .varino-story__badge span{font-size:11px;letter-spacing:.3em;text-transform:uppercase;font-family:'Lora',serif;font-weight:500;margin-top:8px;color:#F5EFE6;}\n  @media (max-width:899px){.varino-story{padding:80px 24px;}.varino-story__grid{grid-template-columns:1fr;gap:50px;}.varino-story__badge{width:130px;height:130px;right:0;bottom:-20px;}.varino-story__badge strong{font-size:32px;}}\n</style>\n<section class=\"varino-story\" id=\"story\">\n  <div class=\"varino-story__grid\">\n    <div class=\"varino-story__copy\">\n      <span class=\"varino-story__eyebrow\">Die Geschichte</span>\n      <h2>Spülen, wie es <em>sein sollte.</em></h2>\n      <p>Tabs hinterlassen Plastik. Pulver hinterlässt Schlieren. Wir glauben: Eine Reinigung, die Geschirr veredelt, sollte auch unsere Erde respektieren.</p>\n      <p>VARINO ist die Antwort: papierdünne, hochkonzentrierte Streifen, entwickelt in Deutschland, perforiert für jeden Spülgang. Eine Bewegung – ein Streifen – kompromisslose Sauberkeit.</p>\n      <div class=\"varino-story__sig\">Mit Sorgfalt entwickelt in München · Est. 2024</div>\n    </div>\n    <div class=\"varino-story__media\">\n      <img src=\"{{ 'varino-flatlay.png' | asset_url }}\" alt=\"Varino flatlay\" loading=\"lazy\">\n      <div class=\"varino-story__badge\"><strong>60</strong><span>Waschgänge</span></div>\n    </div>\n  </div>\n</section>",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "varino_features": {
+      "type": "custom-liquid",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "custom_liquid": "<style>\n  .varino-features{width:100vw;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;position:relative;background:#1B3A2F;color:#F5EFE6;padding:110px 24px;}\n  .varino-features__inner{max-width:1280px;margin:0 auto;}\n  .varino-features__head{text-align:center;max-width:680px;margin:0 auto 70px;}\n  .varino-features__eyebrow{font-family:'Lora',serif;font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:#D6BC8A;display:inline-block;margin-bottom:18px;}\n  .varino-features__title{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(32px,4vw,52px);line-height:1.15;margin:0 0 18px;}\n  .varino-features__title em{font-style:italic;color:#D6BC8A;}\n  .varino-features__sub{font-family:'Lora',serif;font-size:16px;line-height:1.7;opacity:.85;margin:0;}\n  .varino-features__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid rgba(214,188,138,.25);}\n  .varino-features__cell{padding:46px 28px;border-right:1px solid rgba(214,188,138,.25);text-align:center;}\n  .varino-features__cell:last-child{border-right:none;}\n  .varino-features__icon{width:46px;height:46px;margin:0 auto 22px;color:#D6BC8A;}\n  .varino-features__h{font-family:'Playfair Display',serif;font-size:20px;font-weight:500;margin:0 0 10px;letter-spacing:.01em;}\n  .varino-features__p{font-family:'Lora',serif;font-size:14px;line-height:1.65;opacity:.78;margin:0;}\n  @media (max-width:899px){.varino-features{padding:80px 16px;}.varino-features__grid{grid-template-columns:1fr 1fr;}.varino-features__cell{border-bottom:1px solid rgba(214,188,138,.25);}.varino-features__cell:nth-child(2n){border-right:none;}.varino-features__cell:nth-last-child(-n+2){border-bottom:none;}}\n  @media (max-width:599px){.varino-features__grid{grid-template-columns:1fr;}.varino-features__cell{border-right:none;border-bottom:1px solid rgba(214,188,138,.25);}.varino-features__cell:last-child{border-bottom:none;}}\n</style>\n<section class=\"varino-features\">\n  <div class=\"varino-features__inner\">\n    <div class=\"varino-features__head\">\n      <span class=\"varino-features__eyebrow\">Vier Versprechen</span>\n      <h2 class=\"varino-features__title\">Konzipiert für <em>kompromisslose</em> Reinheit.</h2>\n      <p class=\"varino-features__sub\">Jeder Streifen vereint deutsche Ingenieurskunst mit jahrelanger Forschung – damit Geschirr glänzt und die Welt ein wenig leichter atmet.</p>\n    </div>\n    <div class=\"varino-features__grid\">\n      <div class=\"varino-features__cell\">\n        <svg class=\"varino-features__icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\"><path d=\"M12 2C7 7 4 11 4 15a8 8 0 0 0 16 0c0-4-3-8-8-13z\"/></svg>\n        <h3 class=\"varino-features__h\">Plastikfrei</h3>\n        <p class=\"varino-features__p\">100 % kompostierbares Papier. Kein Mikroplastik, kein Müll, keine Ausreden.</p>\n      </div>\n      <div class=\"varino-features__cell\">\n        <svg class=\"varino-features__icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\"><path d=\"M5 12l4 4L19 6\"/></svg>\n        <h3 class=\"varino-features__h\">Hochkonzentriert</h3>\n        <p class=\"varino-features__p\">Ein Streifen ersetzt einen Tab. Halbieren Sie ihn – und doppeln Sie Ihre Pack-Reichweite.</p>\n      </div>\n      <div class=\"varino-features__cell\">\n        <svg class=\"varino-features__icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v5l3 2\"/></svg>\n        <h3 class=\"varino-features__h\">60 Waschgänge</h3>\n        <p class=\"varino-features__p\">Bis zu zwei Monate makelloses Geschirr aus einer einzigen, eleganten Box.</p>\n      </div>\n      <div class=\"varino-features__cell\">\n        <svg class=\"varino-features__icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\"><path d=\"M12 3v18M5 8h14M5 16h14\"/></svg>\n        <h3 class=\"varino-features__h\">Made in Germany</h3>\n        <p class=\"varino-features__p\">Entwickelt und produziert in deutscher Manufaktur – nach strengsten EU-Standards.</p>\n      </div>\n    </div>\n  </div>\n</section>",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "varino_video": {
+      "type": "custom-liquid",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "custom_liquid": "<style>\n  .varino-video{width:100vw;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;position:relative;height:90vh;min-height:600px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#0F241C;color:#F5EFE6;}\n  .varino-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}\n  .varino-video__overlay{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(15,30,24,.25) 0%,rgba(15,30,24,.7) 80%);}\n  .varino-video__inner{position:relative;text-align:center;padding:0 24px;max-width:760px;}\n  .varino-video__eyebrow{font-family:'Lora',serif;font-size:11px;letter-spacing:.45em;text-transform:uppercase;color:#D6BC8A;display:inline-block;margin-bottom:24px;}\n  .varino-video__title{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(36px,5.4vw,72px);line-height:1.08;margin:0 0 22px;letter-spacing:-.005em;}\n  .varino-video__title em{font-style:italic;color:#D6BC8A;}\n  .varino-video__p{font-family:'Lora',serif;font-size:17px;line-height:1.7;opacity:.9;margin:0 auto 36px;max-width:540px;}\n  .varino-video__cta{display:inline-block;padding:18px 42px;background:#F5EFE6;color:#1B3A2F;text-decoration:none;font-family:'Lora',serif;font-size:12px;letter-spacing:.36em;text-transform:uppercase;font-weight:600;}\n  .varino-video__cta:hover{background:#A37D5A;color:#F5EFE6;}\n</style>\n<section class=\"varino-video\">\n  <video src=\"{{ 'varino-video-dissolve.mp4' | asset_url }}\" autoplay muted loop playsinline poster=\"{{ 'varino-sheet-dissolve.png' | asset_url }}\"></video>\n  <div class=\"varino-video__overlay\"></div>\n  <div class=\"varino-video__inner\">\n    <span class=\"varino-video__eyebrow\">Hochkonzentrierte Wirkung</span>\n    <h2 class=\"varino-video__title\">Ein dünner Streifen.<br><em>Kompromissloser Glanz.</em></h2>\n    <p class=\"varino-video__p\">Beobachten Sie, wie sich VARINO innerhalb von Sekunden in pflegende Mikropartikel auflöst – für tiefe Reinigung ohne Rückstände.</p>\n    <a href=\"/products/varino-spuelmaschinen-blaetter\" class=\"varino-video__cta\">Jetzt entdecken</a>\n  </div>\n</section>",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "varino_product": {
+      "type": "featured-product",
+      "blocks": {
+        "fp_title": {
+          "type": "heading",
+          "settings": {
+            "heading": "Varino Spülmaschinen Blätter",
+            "heading_size": "h1",
+            "alignment": "left",
+            "mobile_alignment": "mobile-left",
+            "title_highlight_color": "#A37D5A",
+            "uppercase_title": false,
+            "desktop_size": 42,
+            "mobile_size": 30,
+            "margin_top": 0,
+            "margin_bottom": 14
+          }
+        },
+        "fp_price": {
+          "type": "product_price",
+          "settings": {
+            "price_layout": "price-first",
+            "price_color": "accent-1",
+            "compare_price_color": "text",
+            "regular_price_size": 26,
+            "sale_price_size": 22,
+            "compare_price_size": 16,
+            "displayed_badge": "sale",
+            "sale_badge_color": "accent-2",
+            "custom_badge_text": "[icon_1] EINFÜHRUNGSPREIS",
+            "icon_scale": 130,
+            "icon_1": "redeem",
+            "filled_icon_1": false,
+            "icon_2": "check_circle",
+            "filled_icon_2": false,
+            "margin_top": 6,
+            "margin_bottom": 18
+          }
+        },
+        "fp_text": {
+          "type": "text",
+          "settings": {
+            "richtext": "<p>Hochkonzentrierte Spülmaschinen-Streifen aus deutscher Manufaktur. <strong>30 Streifen pro Pack — halbierbar für bis zu 60 Waschgänge.</strong> Plastikfrei, vegan, dermatologisch getestet.</p>",
+            "title_highlight_color": "#A37D5A",
+            "alignment": "flex-start",
+            "mobile_alignment": "mobile-left",
+            "uppercase": false,
+            "italic": false,
+            "bold": false,
+            "size": 16,
+            "color": "text",
+            "margin_top": 0,
+            "margin_bottom": 22
+          }
+        },
+        "fp_buy": {
+          "type": "product_buy-buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_pickup_availability": false,
+            "atc_full_width": true,
+            "atc_btn_label": "In den Warenkorb — [price]",
+            "atc_btn_label_added": "Hinzugefügt",
+            "atc_btn_label_unavailable": "Ausverkauft",
+            "margin_top": 12,
+            "margin_bottom": 14
+          }
+        }
+      },
+      "block_order": ["fp_title", "fp_price", "fp_text", "fp_buy"],
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "product": "",
+        "secondary_background": false,
+        "media_position": "left",
+        "media_size": "medium",
+        "hide_variants": false,
+        "color_scheme": "background-1",
+        "padding_top": 90,
+        "padding_bottom": 90
+      }
+    },
+    "varino_comparison": {
+      "type": "comparison-table",
+      "blocks": {
+        "row_v1": {
+          "type": "row",
+          "settings": {
+            "benefit": "<strong>Plastikfrei verpackt</strong>",
+            "us": true,
+            "others": false,
+            "others_2": false,
+            "others_3": false
+          }
+        },
+        "row_v2": {
+          "type": "row",
+          "settings": {
+            "benefit": "<strong>Hochkonzentrierte Wirkung</strong>",
+            "us": true,
+            "others": true,
+            "others_2": false,
+            "others_3": false
+          }
+        },
+        "row_v3": {
+          "type": "row",
+          "settings": {
+            "benefit": "<strong>Halbierbar (Dosierung anpassbar)</strong>",
+            "us": true,
+            "others": false,
+            "others_2": false,
+            "others_3": false
+          }
+        },
+        "row_v4": {
+          "type": "row",
+          "settings": {
+            "benefit": "<strong>Bis zu 60 Waschgänge pro Pack</strong>",
+            "us": true,
+            "others": false,
+            "others_2": false,
+            "others_3": false
+          }
+        },
+        "row_v5": {
+          "type": "row",
+          "settings": {
+            "benefit": "<strong>Ohne Phosphate & Parabene</strong>",
+            "us": true,
+            "others": false,
+            "others_2": false,
+            "others_3": false
+          }
+        },
+        "row_v6": {
+          "type": "row",
+          "settings": {
+            "benefit": "<strong>Vegan & dermatologisch getestet</strong>",
+            "us": true,
+            "others": false,
+            "others_2": false,
+            "others_3": false
+          }
+        },
+        "row_v7": {
+          "type": "row",
+          "settings": {
+            "benefit": "<strong>Made in Germany</strong>",
+            "us": true,
+            "others": false,
+            "others_2": false,
+            "others_3": false
+          }
+        }
+      },
+      "block_order": ["row_v1", "row_v2", "row_v3", "row_v4", "row_v5", "row_v6", "row_v7"],
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "title": "VARINO oder klassische Tabs?",
+        "heading_size": "h1",
+        "text": "<p>Sehen Sie selbst, warum sich anspruchsvolle Haushalte für VARINO entscheiden.</p>",
+        "button_label": "",
+        "link": "",
+        "button_style_secondary": false,
+        "atc_button_label": "",
+        "atc_product": "",
+        "atc_skip_cart": false,
+        "desktop_alignment": "center",
+        "color_scheme": "background-1",
+        "custom_colors_background": "#F5EFE6",
+        "custom_gradient_background": "",
+        "custom_colors_text": "#1B3A2F",
+        "custom_colors_solid_button_background": "#1B3A2F",
+        "custom_colors_solid_button_text": "#F5EFE6",
+        "custom_colors_outline_button": "#1B3A2F",
+        "layout": "table_second",
+        "style": "centered",
+        "corner_radius": 0,
+        "number_of_competitors": 1,
+        "us_label": "VARINO",
+        "us_label_size": 22,
+        "logo_width": 90,
+        "mobile_logo_width": 60,
+        "others_label": "Klassische Tabs",
+        "others_label_size": 18,
+        "others_logo_width": 90,
+        "others_mobile_logo_width": 60,
+        "others_2_label": "Pulver",
+        "others_2_label_size": 18,
+        "others_2_logo_width": 90,
+        "others_2_mobile_logo_width": 60,
+        "others_3_label": "Gel",
+        "others_3_label_size": 18,
+        "others_3_logo_width": 90,
+        "others_3_mobile_logo_width": 60,
+        "checkmark_style": "regular",
+        "checkmark_color": "#F5EFE6",
+        "checkmark_bg_color": "#1B3A2F",
+        "x_style": "regular",
+        "x_color": "#1B3A2F",
+        "x_bg_color": "#EBE3D2",
+        "opposite_icon_colors": "original",
+        "highlighted_color_scheme": "accent-1",
+        "custom_colors_highlighted_background": "#1B3A2F",
+        "custom_colors_highlighted_text": "#F5EFE6",
+        "highlighted_separator_opacity": 16,
+        "highlighted_overlay_opacity": 0,
+        "other_cells_color_scheme": "background-1",
+        "custom_colors_others_background": "#F5EFE6",
+        "custom_colors_others_text": "#1B3A2F",
+        "regular_separator_opacity": 14,
+        "regular_overlay_opacity": 0,
+        "minimalistic_border_opacity": 16,
+        "padding_top": 90,
+        "padding_bottom": 90
+      }
+    },
+    "varino_steps": {
+      "type": "custom-liquid",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "custom_liquid": "<style>\n  .varino-steps{width:100vw;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;position:relative;background:#EBE3D2;padding:110px 24px;}\n  .varino-steps__inner{max-width:1280px;margin:0 auto;}\n  .varino-steps__head{text-align:center;margin-bottom:80px;}\n  .varino-steps__eyebrow{font-family:'Lora',serif;font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:#A37D5A;margin-bottom:18px;display:inline-block;}\n  .varino-steps__title{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(32px,4vw,54px);color:#1B3A2F;margin:0;line-height:1.1;}\n  .varino-steps__title em{font-style:italic;color:#A37D5A;}\n  .varino-steps__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}\n  .varino-steps__card{background:#F5EFE6;padding:48px 36px;text-align:left;position:relative;border:1px solid rgba(27,58,47,.08);}\n  .varino-steps__num{font-family:'Playfair Display',serif;font-style:italic;font-size:62px;color:#A37D5A;line-height:1;margin-bottom:18px;display:block;}\n  .varino-steps__h{font-family:'Playfair Display',serif;font-weight:500;font-size:24px;color:#1B3A2F;margin:0 0 14px;}\n  .varino-steps__p{font-family:'Lora',serif;font-size:15px;line-height:1.7;color:#2A3B33;margin:0;opacity:.85;}\n  @media (max-width:899px){.varino-steps__grid{grid-template-columns:1fr;}.varino-steps{padding:70px 16px;}}\n</style>\n<section class=\"varino-steps\">\n  <div class=\"varino-steps__inner\">\n    <div class=\"varino-steps__head\">\n      <span class=\"varino-steps__eyebrow\">Anwendung</span>\n      <h2 class=\"varino-steps__title\">In drei <em>einfachen</em> Schritten zu reinem Glanz.</h2>\n    </div>\n    <div class=\"varino-steps__grid\">\n      <div class=\"varino-steps__card\">\n        <span class=\"varino-steps__num\">01</span>\n        <h3 class=\"varino-steps__h\">Streifen entnehmen</h3>\n        <p class=\"varino-steps__p\">Öffnen Sie die Box und entnehmen Sie einen papierdünnen VARINO-Streifen. Bei leicht verschmutztem Geschirr genügt die Hälfte – einfach an der Perforation teilen.</p>\n      </div>\n      <div class=\"varino-steps__card\">\n        <span class=\"varino-steps__num\">02</span>\n        <h3 class=\"varino-steps__h\">In die Maschine geben</h3>\n        <p class=\"varino-steps__p\">Legen Sie den Streifen in das Tab-Fach oder direkt in den Innenraum. Programm wählen — fertig. Keine Folie, kein Pulverstaub.</p>\n      </div>\n      <div class=\"varino-steps__card\">\n        <span class=\"varino-steps__num\">03</span>\n        <h3 class=\"varino-steps__h\">Glanz genießen</h3>\n        <p class=\"varino-steps__p\">VARINO löst sich vollständig auf und entfaltet seine konzentrierte Reinigungskraft – für streifenfrei klares Geschirr und strahlenden Glanz.</p>\n      </div>\n    </div>\n  </div>\n</section>",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "varino_testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "tst_1": {
+          "type": "column",
+          "settings": {
+            "name": "Lena W.",
+            "name_color": "#1B3A2F",
+            "subname": "Hamburg",
+            "subname_color": "#A37D5A",
+            "stars": 5,
+            "star_color": "#A37D5A",
+            "star_size": 18,
+            "review": "<p>Endlich ein Spülmittel, das man stehen lassen kann. Die Box ist so schön, ich habe sie auf der Anrichte. Geschirr glänzt wie nie.</p>"
+          }
+        },
+        "tst_2": {
+          "type": "column",
+          "settings": {
+            "name": "Maximilian B.",
+            "name_color": "#1B3A2F",
+            "subname": "München",
+            "subname_color": "#A37D5A",
+            "stars": 5,
+            "star_color": "#A37D5A",
+            "star_size": 18,
+            "review": "<p>Plastikfrei, hochkonzentriert und einfach genial. Halbiere die Streifen und komme jetzt zwei Monate mit einer Box aus.</p>"
+          }
+        },
+        "tst_3": {
+          "type": "column",
+          "settings": {
+            "name": "Charlotte M.",
+            "name_color": "#1B3A2F",
+            "subname": "Berlin",
+            "subname_color": "#A37D5A",
+            "stars": 5,
+            "star_color": "#A37D5A",
+            "star_size": 18,
+            "review": "<p>Riecht dezent, dosiert sich von selbst und reinigt makellos. Das Beste: kein Plastikmüll mehr unter der Spüle.</p>"
+          }
+        },
+        "tst_4": {
+          "type": "column",
+          "settings": {
+            "name": "Felix R.",
+            "name_color": "#1B3A2F",
+            "subname": "Frankfurt",
+            "subname_color": "#A37D5A",
+            "stars": 5,
+            "star_color": "#A37D5A",
+            "star_size": 18,
+            "review": "<p>Habe lange nach einer eleganten Alternative zu Tabs gesucht. VARINO sieht hochwertig aus und funktioniert tadellos – auch bei Eingebranntem.</p>"
+          }
+        }
+      },
+      "block_order": ["tst_1", "tst_2", "tst_3", "tst_4"],
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "title": "Geliebt von <em>echten</em> Haushalten.",
+        "heading_size": "h1",
+        "text": "<p>Über 12.000 zufriedene Kunden vertrauen VARINO.</p>",
+        "color_scheme": "background-1",
+        "custom_colors_background": "#F5EFE6",
+        "custom_gradient_background": "",
+        "custom_colors_text": "#1B3A2F",
+        "cards_color_scheme": "background-1",
+        "custom_cards_colors_background": "#FFFFFF",
+        "custom_cards_gradient_background": "",
+        "custom_cards_colors_text": "#1B3A2F",
+        "type": "slide",
+        "autoplay": true,
+        "autoplay_speed": 6,
+        "arrows_color_scheme": "accent-1",
+        "transparent_arrows": true,
+        "dots_color_scheme": "accent-1",
+        "desktop_full_page": false,
+        "columns_desktop": 4,
+        "slider_desktop": false,
+        "per_move_desktop": 1,
+        "desktop_spacing": 24,
+        "desktop_side_padding": 0,
+        "desktop_padding_calc": true,
+        "desktop_adaptive_height": false,
+        "desktop_dots_position": "under",
+        "desktop_arrows_position": "sides",
+        "columns_mobile": "1",
+        "slider_mobile": true,
+        "enable_mobile_preview": false,
+        "mobile_adaptive_height": false,
+        "mobile_dots_position": "under",
+        "mobile_arrows_position": "under",
+        "padding_top": 90,
+        "padding_bottom": 90
+      }
+    },
+    "varino_faq": {
+      "type": "collapsible-content",
+      "blocks": {
+        "faq_1": {
+          "type": "collapsible-row",
+          "settings": {
+            "heading": "Wie viele Waschgänge schaffe ich pro Pack?",
+            "row_content": "<p>In einer VARINO-Box sind 30 papierdünne Streifen. Da Sie diese an der vorgesehenen Perforation halbieren können, kommen Sie auf bis zu 60 Waschgänge pro Pack — bei normaler Verschmutzung.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "collapsible-row",
+          "settings": {
+            "heading": "Wann sollte ich einen ganzen, wann einen halben Streifen verwenden?",
+            "row_content": "<p>Halber Streifen: kleine Spülmenge, Glas und leicht verschmutztes Geschirr. Ganzer Streifen: voll beladene Maschine, eingebrannte Reste, Pfannen oder besonders hartes Wasser.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "collapsible-row",
+          "settings": {
+            "heading": "Wo lege ich den Streifen in die Spülmaschine?",
+            "row_content": "<p>Sie können den VARINO-Streifen direkt in das Tab-Fach legen oder, bei sehr eng dosierten Fächern, einfach lose auf den Geschirrkorb. Er löst sich rückstandslos auf.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "collapsible-row",
+          "settings": {
+            "heading": "Ist VARINO wirklich plastikfrei?",
+            "row_content": "<p>Ja. Sowohl die Streifen selbst als auch die Verpackung sind frei von Mikroplastik. Die Box ist vollständig kompostierbar — eine kleine, aber konsequente Geste für unsere Umwelt.</p>"
+          }
+        },
+        "faq_5": {
+          "type": "collapsible-row",
+          "settings": {
+            "heading": "Wirkt VARINO auch bei hartem Wasser?",
+            "row_content": "<p>Absolut. Unsere Rezeptur enthält natürliche Wasserenthärter und Klarspüler-Enzyme. Wir empfehlen dennoch, Salz im Vorratsbehälter Ihrer Maschine aufzufüllen.</p>"
+          }
+        },
+        "faq_6": {
+          "type": "collapsible-row",
+          "settings": {
+            "heading": "Wie schnell wird geliefert?",
+            "row_content": "<p>Wir versenden innerhalb von 24 Stunden klimaneutral aus Deutschland. Die Lieferung erreicht Sie in der Regel nach 2–3 Werktagen.</p>"
+          }
+        }
+      },
+      "block_order": ["faq_1", "faq_2", "faq_3", "faq_4", "faq_5", "faq_6"],
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "title": "Häufige Fragen.",
+        "heading_size": "h1",
+        "text": "<p>Alles, was Sie über VARINO wissen sollten.</p>",
+        "desktop_alignment": "left",
+        "color_scheme": "background-1",
+        "custom_colors_background": "#F5EFE6",
+        "custom_gradient_background": "",
+        "custom_colors_text": "#1B3A2F",
+        "custom_colors_accent": "#A37D5A",
+        "layout": "two_columns",
+        "padding_top": 90,
+        "padding_bottom": 90
+      }
+    },
+    "varino_newsletter": {
+      "type": "newsletter",
+      "blocks": {
+        "nl_h": {
+          "type": "heading",
+          "settings": {
+            "heading": "Werden Sie Teil der <em>VARINO</em>-Familie.",
+            "heading_size": "h1",
+            "alignment": "center",
+            "mobile_alignment": "mobile-center",
+            "title_highlight_color": "#A37D5A",
+            "uppercase_title": false,
+            "desktop_size": 44,
+            "mobile_size": 30,
+            "margin_top": 0,
+            "margin_bottom": 14
+          }
+        },
+        "nl_t": {
+          "type": "text",
+          "settings": {
+            "richtext": "<p>Erhalten Sie 10 % Rabatt auf Ihre erste Box, exklusive Rituale rund um nachhaltigen Haushalt und Vorab-Zugang zu neuen Düften.</p>",
+            "title_highlight_color": "#A37D5A",
+            "alignment": "center",
+            "mobile_alignment": "mobile-center",
+            "uppercase": false,
+            "italic": false,
+            "bold": false,
+            "size": 16,
+            "color": "text",
+            "margin_top": 0,
+            "margin_bottom": 24
+          }
+        },
+        "nl_e": {
+          "type": "email-signup",
+          "settings": {
+            "input_label": "Ihre E-Mail-Adresse",
+            "input_btn_label": "Anmelden",
+            "input_btn_full_width_mobile": true,
+            "input_text_alignment": "left",
+            "input_size": 16,
+            "input_btn_size": 14,
+            "input_radius": 0,
+            "input_btn_radius": 0,
+            "input_color": "#1B3A2F",
+            "input_bg_color": "#FFFFFF",
+            "input_border_color": "#1B3A2F",
+            "input_btn_color": "#F5EFE6",
+            "input_btn_bg_color": "#1B3A2F",
+            "input_btn_border_color": "#1B3A2F",
+            "succes_msg": "Herzlich willkommen bei VARINO!",
+            "margin_top": 14,
+            "margin_bottom": 0
+          }
+        }
+      },
+      "block_order": ["nl_h", "nl_t", "nl_e"],
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "color_scheme": "background-1",
+        "custom_colors_background": "#EBE3D2",
+        "custom_gradient_background": "",
+        "custom_colors_text": "#1B3A2F",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "full_width": true
+      }
+    }
+  },
+  "order": [
+    "varino_hero",
+    "varino_marquee",
+    "varino_story",
+    "varino_features",
+    "varino_video",
+    "varino_product",
+    "varino_comparison",
+    "varino_steps",
+    "varino_testimonials",
+    "varino_faq",
+    "varino_newsletter"
+  ]
+}
